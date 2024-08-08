@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="wdesign.css">
+        <link rel="stylesheet" href="wdesign2.css">
+        <link rel="stylesheet" href="formstyle.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>University Website Design</title>
+    </head>
+    <body>
+        <section class="header" id="header">
+            <nav>
+                <a href="web.html"><img src="imagepath/logo.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="#" class="home-btn" onclick="gotoRESULTS()">RESULTS</a></li>
+                        <li><a href="#" class="home-btn" onclick="gotoMISSION()">MISSION</a></li>
+                        <li><a href="#" class="home-btn" onclick="gotoVISION()">VISION</a></li>
+                        <li><a href="#" class="home-btn" onclick="gotoCORE()">CORE VALUES</a></li>
+                        <li><a href="#" class="home-btn" onclick="gotoSERVICES()">SERVICES</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+
+            <div class="text-box">
+                <h5>DICT SATISFACTION SURVEY</h5>
+                <h6>Help Us Serve You Better!</h6>
+                <a href="#" class="visit-btn" onclick="gotoform()">Survey Form</a>
+            </div>         
+        </section>
+
+        <div class="the-form" id="form" style="display: none;">
+            <form method="post" action="" name="survey-form">
+                <!-- container1 starts here -->
+                <section class="container1" id="container1">
+                    <center>
+                        <img src="imagepath/dict-logo.png"; 
+                            height="120" 
+                            style="margin-top: 10px; margin-bottom: 10px;">
+                        <br />
+                        <br />
+                        <h1>HELP US SERVE YOU BETTER!</h1>
+                    </center>
+                    <br/>
+                    <p id="Description"> This Client Satisfaction Measurement (CSM) survey aims to track the customer experience of government offices. Your feedback on your recently concluded transaction will help this office provide a better service. Personal information shared will be kept confidential and you always have the option to not answer this form.</p>
+                    <br />
+                    <label>Name:</label>
+                    <input type="text" name="NAME" placeholder="Optional">
+                    <br/><br/>
+                    <label>Email:</label>
+                    <input type="email" name="EMAIL" placeholder="Optional">
+                    <br/><br/>
+                    <label>Date:</label>
+                    <input
+                        type="date"
+                        name="DATE"
+                        required />
+                     <br/><br/>
+                     <label>Region of Residence:</label>
+                     <select id="response" name="REGION" required>
+                        <option value="" disabled selected>Select an option.</option>
+                        <option value="Region I">Region I</option>
+                        <option value="Region II">Region II</option>
+                        <option value="Region III">Region III</option>
+                        <option value="Region IV-A">Region IV-A</option>
+                        <option value="MIMAROPA Region">MIMAROPA Region</option>
+                        <option value="Region V">Region V</option>
+                        <option value="Region VI">Region VI</option>
+                        <option value="Region VII">Region VII</option>
+                        <option value="Region VIII">Region VIII</option>
+                        <option value="Region IX">Region IX</option>
+                        <option value="Region X">Region X</option>
+                        <option value="Region XI">Region XI</option>
+                        <option value="Region XII">Region XII</option>
+                        <option value="Region X111">Region XIII</option>
+                        <option value="NCR">NCR</option>
+                        <option value="CAR">CAR</option>
+                        <option value="BARMM">BARMM</option>
+                    </select>
+                    <br/><br/>
+                    <label for = 'OthersEnabler'>Service Availed:</label>
+                    <select id="others" name="SERVICE AVAILED" onchange="OthersEnabler(this)">
+                        <option value="" disabled selected>Select an option.</option>
+                        <option value="Individual Certificate">Individual Digital Certificate</option>
+                        <option value="Agency Certificate">Agency Digital Certificate</option>
+                        <option value="ILCDB Courses and Seminar (By Invitation)">ILCDB Courses and Seminar</option>
+                        <option value="Registration to ILCDB Courses and Processing of Payment">Registration to ILCDB Courses and Processing of Payment</option>
+                        <option value="Application for the ICT Proficiency Test">Application for the ICT Proficiency Test</option>
+                        <option value="Processing of Requests for Access to ICT services through Tech4ED Centers For Basic ICT Services">Processing of Requests for Access to ICT services through Tech4ED Centers For Basic ICT Services</option>
+                        <option value="Processing of Requests for Access to ICT services through Tech4ED Centers For Digital Hub">Processing of Requests for Access to ICT services through Tech4ED Centers For Digital Hub</option>
+                        <option value="Technical Support for Free Wi-Fi">Technical Support for Free Wi-Fi</option>
+                        <option value="Technical Support for GovNET">Technical Support for GovNET</option>
+                        <option value="Technical Support for eLGU BPLS">Technical Support for eLGU BPLS</option>
+                        <option value="Provisioning of iBPLS Software">Provision of iBPLS Software</option>
+                        <option value="Others">Others</option>
+                    </select>
+                    <div id="Others" style="display:none;">
+                        <br/><br/>
+                        <label for="Others">If others, specify:</label>
+                        <input type="text" id="Others" name="SERVICE AVAILED:OTHERS">
+                    </div>
+                     <br/><br/>
+                    <label>Age</label>
+                    <select id="response" name="AGE" required>
+                        <option value="" disabled selected>Select an option.</option>
+                        <option value="19 - lower">19 - lower</option>
+                        <option value="20-34">20-34</option>
+                        <option value="35-49">35-49</option>
+                        <option value="50-64">50-64</option>
+                        <option value="64 - higher">64 - higher</option>
+                        <option value="Cannot Specify">Cannot Specify</option>
+                    </select>
+                    <br/><br/>
+                    <label>Citizen Type:</label>
+                    <select id="response" name="CITIZEN TYPE" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Government">Government</option>
+                        <option value="Business">Business</option>
+                        <option value="Citizen">Citizen</option>
+                        <option value="Student">Student</option>
+                    </select>
+                    <br/><br/>
+                    <label>Sex:</label>
+                    <select id="response" name="SEX" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                    </select>
+                    <br/><br/>
+                    <button type="button" class="form-btn" onclick="gotonext()">NEXT</button>
+                    <br/><br/>
+                    <button type="button" class="design-btn" onclick="backToHome()">Back to Home</button>
+                </section>
+                <!-- container1 ends here -->
+    
+                <!-- container2 starts here -->
+                <section class="container2" id="container2" style="display: none;">
+                    <h4>DICT SURVEY QUESTIONNAIRE</h4>
+                    <br/>
+                    <p id="instructions">INSTRUCTIONS: Select  your answer to the Citizen's Charter (CC) questions. The Citizen's Charter is an official document that reflects the services of a government agency/office including its requirements, fees, and processing times among others.</p>
+                    <br/>
+                    <label for="CC1">CC1. Which of ther following best describes your awareness of a CC?</label>
+                    <select id="CC1" name="CC1" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="1">I know what a CC is and I saw this office's CC.</option>
+                        <option value="2">I know what a CC is but I did NOT see this office's CC.</option>
+                        <option value="3">I learned of the CC only when I saw this office's CC.</option>
+                        <option value="4">I do not know what a CC is and I did not see one in this office. (Answer 'N/A' on CC2 and CC3)</option>
+                    </select>
+                    <br/><br/>
+                    <label for="CC2">CC2. If aware of CC (answered 1-3 in CC1), would you say that the CC of this office was?</label>
+                    <select id="CC2" name="CC2" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="1">Easy to see</option>
+                        <option value="2">Somewhat easy to see</option>
+                        <option value="3">Difficult to see</option>
+                        <option value="4">Not visible at all</option>
+                        <option value="5">N/A</option>
+                    </select>
+                    <br/><br/>
+                    <label for="CC3">CC3. If aware of CC (answered codes 1-3 in CC1), how much did the CC help you in you transaction?</label>
+                    <select id="CC3" name="CC3" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="1">Helped very much</option>
+                        <option value="2">Somewhat helped</option>
+                        <option value="3">Did not help</option>
+                        <option value="4">N/A</option>
+                    </select>
+                    <br/><br/>
+                    <p id="Description">INSTRUCTIONS: For SQD0-8, please select the best corresponds to your answer.</p>
+                    <br/><br/>
+                    <label for="SQD1">SQD1. I spent a reasonable amount of time for my transaction.</label>
+                    <select id="SQD1" name="SQD1" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Strongly Agree">Strongly Agree</option>
+                        <option value="Agree">Agree</option>
+                        <option value="Neither">Neither</option>
+                        <option value="Disagree">Disagree</option>
+                        <option value="Strongly Disagree">Strongly Disagree</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                    <br/><br/>
+                    <label for="SQD2" >SQD2. The office followed the transaction's requirements and steps based on the information provided.</label>
+                    <select id="SQD2" name="SQD2" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Strongly Agree">Strongly Agree</option>
+                        <option value="Agree">Agree</option>
+                        <option value="Neither">Neither</option>
+                        <option value="Disagree">Disagree</option>
+                        <option value="Strongly Disagree">Strongly Disagree</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                    <br/><br/>
+                    <label for="SQD3">SQD3. The steps (including payment) I needed to do for my transaction were easy and simple.</label>
+                    <select id="SQD3" name="SQD3" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Strongly Agree">Strongly Agree</option>
+                        <option value="Agree">Agree</option>
+                        <option value="Neither">Neither</option>
+                        <option value="Disagree">Disagree</option>
+                        <option value="Strongly Disagree">Strongly Disagree</option>
+                        <option value="N/A">N/A</option>
+                    </select> 
+                    <br/><br/>
+                    <label for="SQD4">SQD4. I easily found information about my transaction from the office or its website.</label>
+                    <select id="SQD4" name="SQD4" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Strongly Agree">Strongly Agree</option>
+                        <option value="Agree">Agree</option>
+                        <option value="Neither">Neither</option>
+                        <option value="Disagree">Disagree</option>
+                        <option value="Strongly Disagree">Strongly Disagree</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                    <br/><br/>
+                    <label for="SQD5">SQD5. I paid a reasonable amount of fees for my transaction.</label>
+                    <select id="SQD5" name="SQD5" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Strongly Agree">Strongly Agree</option>
+                        <option value="Agree">Agree</option>
+                        <option value="Neither">Neither</option>
+                        <option value="Disagree">Disagree</option>
+                        <option value="Strongly Disagree">Strongly Disagree</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                    <br/><br/>
+                    <label for="SQD6">SQD6. I feel the office was fair to everyone, or "walang palakasan", during my transaction.</label>
+                    <select id="SQD6" name="SQD6" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Strongly Agree">Strongly Agree</option>
+                        <option value="Agree">Agree</option>
+                        <option value="Neither">Neither</option>
+                        <option value="Disagree">Disagree</option>
+                        <option value="Strongly Disagree">Strongly Disagree</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                    <br/><br/>
+                    <label for="SQD7">SQD7. I was treated courteously by the staff, and (if asked for help) the staff was helpful.</label>
+                    <select id="SQD7" name="SQD7" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Strongly Agree">Strongly Agree</option>
+                        <option value="Agree">Agree</option>
+                        <option value="Neither">Neither</option>
+                        <option value="Disagree">Disagree</option>
+                        <option value="Strongly Disagree">Strongly Disagree</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                    <br/><br/>
+                    <label for="SQD8">SQD8. I got what I needed from the goverment office, or (if denied) denial of request was sufficiently explained to me.</label>
+                    <select id="SQD8" name="SQD8" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="Strongly Agree">Strongly Agree</option>
+                        <option value="Agree">Agree</option>
+                        <option value="Neither">Neither</option>
+                        <option value="Disagree">Disagree</option>
+                        <option value="Strongly Disagree">Strongly Disagree</option>
+                        <option value="N/A">N/A</option>
+                    </select>
+                    <br/><br/>
+                    <input type="submit" class="design-btn" value="Submit" id="submit">
+                    <br/><br/>
+                    <button type="button" class="design-btn" onclick="gotopage1()">Back to first page</button>
+                    <br/><br/>
+                    <button type="button" class="design-btn" onclick="backToHome()">Back to Home</button>
+                </section>
+            </form>
+        </div>
+
+        <div id="results" style="display:none;">
+            <h1>DICT SURVEY FORM </h1>
+            <h1>RESULTS</h1>
+            <br />
+            <div class="summary-section">
+                <h4>Summary of Responses</h4>
+                <br />
+                <p>Total Responses: <span id="totalResponses"></span></p>
+                <span id="columns" style="display: none;" ></span>
+                <br />
+                <table id="summaryTable">
+                  <thead>
+                    <tr>
+                      <th>Field</th>
+                      <th>Response Count</th>
+                      <th>Unique Values</th>
+                      <th>Average Length (if applicable)</th>
+                      <th>Dropdown Counts</th>
+                    </tr>
+                  </thead>
+                  <tbody id="summary">
+                    <!-- Summary data will be populated here by JavaScript -->
+                  </tbody>
+                </table>
+              </div>
+              <!-- Existing Pie Chart -->
+            <!-- Add unique IDs to each canvas -->
+        <div class="chartbox">
+            <canvas id="ServiceAvailedPieChart"></canvas>
+            <canvas id="AgePieChart"></canvas>
+            <canvas id="CitizenTypePieChart"></canvas>
+        </div> 
+        <div class="chartbox">
+            <canvas id="SexPieChart"></canvas>
+            <canvas id="CC1PieChart"></canvas>
+            <canvas id="CC2PieChart"></canvas>
+        </div>    
+        <div class="chartbox">
+            <canvas id="CC3PieChart"></canvas>
+            <canvas id="SQD1PieChart"></canvas>
+            <canvas id="SQD2PieChart"></canvas>
+        </div>    
+        <div class="chartbox">
+            <canvas id="SQD3PieChart"></canvas>
+            <canvas id="SQD4PieChart"></canvas>
+            <canvas id="SQD5PieChart"></canvas>
+        </div>   
+        <div class="chartbox">
+            <canvas id="SQD6PieChart"></canvas>
+            <canvas id="SQD7PieChart"></canvas>
+            <canvas id="SQD8PieChart"></canvas>
+        </div>
+
+                <button type="button" class="design-btn" onclick="backToHome()">Back to Home</button>
+    
+        </div>
+
+        <div id="mission" style="display:none;">
+            <h1>DEPARTMENT OF INFORMATION AND COMMUNICATIONS TECHNOLOGY </h1>
+            <br /><br />
+            <h2>"DICT of the people and for the people."</h2>
+            <p>The Department of Information and Communications Technology commits to:</p>
+            <br/><br/>
+            <h1>MISSION</h1>
+            <br /><br />
+            <ul>
+                <li>Provide every Filipino access to vital ICT infostructure and services</li>
+                <li>Ensure sustainable growth of Philippine ICT-enabled industries resulting to creation of more jobs</li>
+                <li>Establish a One Digitized Government, One Nation</li>
+                <li>Support the administration in fully achieving its goals</li>
+                <li>Be the enabler, innovator, achiever and leader in pushing the country’s development and transition towards a world-class digital economy</li>
+            </ul>
+            <br /><br />
+                <button type="button" class="design-btn" onclick="backToHome()">Back to Home</button>
+        </div>
+
+        <div id="vision" style="display:none;">
+            <h1>DEPARTMENT OF INFORMATION AND COMMUNICATIONS TECHNOLOGY </h1>
+            <br/><br/>
+            <h1>VISION</h1>
+            <br/><br/>
+            <h2>“An innovative, safe and happy nation that thrives through and is enabled by Information and Communications Technology.”</h2>
+            <h2>DICT aspires for the Philippines to develop and flourish through innovation and constant development of ICT in the pursuit of a progressive, safe, secured, contented and happy Filipino nation.</h2>
+            <br/><br/>
+                <button type="button" class="design-btn" onclick="backToHome()">Back to Home</button>
+        </div>
+
+        <div id="COREVALUES" style="display:none;">
+            <h1>DEPARTMENT OF INFORMATION AND COMMUNICATIONS TECHNOLOGY </h1>
+            <br/><br/>
+            <h1>CORE VALUES</h1>
+            <br /><br />
+            <h2>D – Dignity</h2>
+            <h2>I – Integrity</h2>
+            <h2>C – Competency and Compassion</h2>
+            <h2>T – Transparency</h2>
+            <br /><br />
+                <button type="button" class="design-btn" onclick="backToHome()">Back to Home</button>
+        </div>
+
+
+
+        <div id="services" style="display:none;">
+            <h1>DEPARTMENT OF INFORMATION AND COMMUNICATIONS TECHNOLOGY </h1>
+            <br/><br/>
+            <h1>SERVICES</h1>
+            <div class="gallery-container">
+            <div class="gallery">
+                <a target="_blank" href="imagepath/dict1.png">
+                  <img src="imagepath/dict1.png" alt="Cinque Terre" width="600" height="400">
+                </a>
+              </div>
+              <div class="gallery">
+                <a target="_blank" href="imagepath/dict2.png">
+                  <img src="imagepath/dict2.png" alt="Forest" width="600" height="400">
+                </a>
+              </div>
+              
+              <div class="gallery">
+                <a target="_blank" href="imagepath/dict3.png">
+                  <img src="imagepath/dict3.png" alt="Northern Lights" width="600" height="400">
+                </a>
+              </div>
+              
+              <div class="gallery">
+                <a target="_blank" href="imagepath/dict4.png">
+                  <img src="imagepath/dict4.png" alt="Mountains" width="600" height="400">
+                </a>
+              </div>
+
+              <div class="gallery">
+                <a target="_blank" href="imagepath/dict5.png">
+                  <img src="imagepath/dict5.png" alt="Mountains" width="600" height="400"></a>
+              </div>
+
+              <div class="gallery">
+                <a target="_blank" href="imagepath/dict6.png">
+                  <img src="imagepath/dict6.png" alt="Mountains" width="600" height="400">
+                </a>
+              </div>
+            </div>
+            
+                <button type="button" class="design-btn" onclick="backToHome()">Back to Home</button>
+        </div>
+
+
+        <script src="wdesign.js"></script>
+    </body>
+</html>
