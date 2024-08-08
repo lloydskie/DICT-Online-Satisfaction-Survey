@@ -1,0 +1,223 @@
+/* Ensure body and html don't allow horizontal scrolling */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(113, 205, 218, 0.7), rgba(12, 24, 73, 0.7)), url(imagepath/bg2.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-content: center;
+}
+
+nav img {
+    width: 150px;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: rgb(24, 41, 71);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: plum;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+.text-box {
+    width: 90%;
+    color: rgb(9, 28, 61);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text-box h5 {
+    font-size: 54px;
+}
+
+.text-box h6 {
+    margin: 10px 0 40px;
+    font-size: 48px;
+    color: rgb(9, 28, 61);
+}
+
+.visit-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(9, 28, 61);
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.visit-btn:hover {
+    border: 1px solid slategray;
+    background: wheat;
+    transition: 0.5s;
+}
+
+.design-btn {
+    display: inline-block;
+    text-decoration: none;
+    color:rgb(9, 28, 61);
+    border: 1px solid lightslategray;
+    border-radius: 7px;
+    padding: 12px 12px;
+    font-size: 13px;
+    background: blanchedalmond;
+    position: relative;
+    cursor: pointer;
+}
+
+.design-btn:hover {
+    border: 1px solid slategray;
+    background: slategray;
+    transition: 0.5s;
+}
+
+.form-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(9, 28, 61);
+    border: 1px solid lightslategray;
+    border-radius: 7px;
+    padding: 12px 12px;
+    font-size: 13px;
+    background: blanchedalmond;
+    position: relative;
+    cursor: pointer;
+}
+
+.form-btn:hover {
+    border: 1px solid slategray;
+    background: slategray;
+    transition: 0.5s;
+}
+
+nav .fa {
+    display: none;
+}
+/*TEMPORARY LANG FOR MOTIVATION ;] */
+.container1 {
+    border: 0cm;
+    background: transparent;
+}
+
+canvas {
+    width: 80% !important; /* Make canvas fill the container */
+    max-width: 300px; /* Set max width */
+    height: auto !important; /* Maintain aspect ratio */
+}
+
+.a ul li{
+    list-style-type: circle;
+  }
+
+  div.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px;
+}
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+@media (max-width: 700px) {
+    .text-box h5 {
+        font-size: 30px;
+    }
+
+    .text-box h6 {
+        font-size: 30px;
+    }
+
+    .nav-links ul li {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        background: white;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -250px; /* Increase this value to hide off-screen */
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+
+    nav .fa {
+        display: block;
+        color: rgb(27, 43, 73);
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .nav-links ul {
+        padding: 30px;
+    }
+}
